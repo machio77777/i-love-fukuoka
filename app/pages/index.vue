@@ -1,12 +1,22 @@
 <template>
   <div class="main-container">
-    <div id="search" class="item-contents">検索 + 新規登録</div>
+    <div id="search" class="item-contents">
+      <div>
+        <ul style="margin-bottom:25px; display:flex;">
+          <li style="width:220px;"><input id="search-input" type="text" value="" placeholder="会社名を入力してください" /></li>
+          <li style="width:80px;"><div id="searchCompany" @click="searchCompany()">検 索</div></li>
+          <li><p style="padding: 3px;">※ 会社名を前方一致で検索.</p></li>
+        </ul>
+        <div id="registCompany" @click="registCompany()">新 規 登 録 へ</div>
+      </div>
+    </div>
     <div v-show="loading" class="loader"></div>
     <div v-show="!loading" class="item">
       <div id="list" class="item-contents">
         <div v-for="company in companys" :key="company.id">
           <div class="list-contents">
-            <div class="button" @click="deleteCompany(company.id)">削除</div>
+            <div class="editCompany" @click="editCompany(company.id)">編 集</div>
+            <div class="button" @click="deleteCompany(company.id)">削 除</div>
             <div id="company-link" class="company-link" @click="detailCompany(company.id)">{{ company.name }}</div>
           </div>
         </div>
@@ -23,7 +33,7 @@
         <div class="column" v-if="company.skills.length!==0">◾️使われている技術</div>
         <div v-for="skill in company.skills" :key=skill.key style="display:inline-block;">
           <div class="value skill-img">
-            <img :src=skill.path />
+            <div style="text-align:center;"><img :src=skill.path /></div>
             <p>{{ skill.key }}</p>
           </div>
         </div>
@@ -65,12 +75,25 @@ export default {
       await this.fetchCompanys()
       this.itemLoading = false
     },
-    detailCompany(companyId) {
+    async searchCompany() {
+      this.itemLoading = true
+      alert('Coming Soon....')
+      this.itemLoading = false
+    },
+    async registCompany() {
+      alert('Coming Soon....')
+    },
+    async editCompany(companyId) {
+      alert('Coming Soon....')
+    },
+    async detailCompany(companyId) {
       const idx = companyId - 1
       this.company = this.companys[idx]
     },
     async deleteCompany(companyId) {
-      alert('Hello World')
+      this.itemLoading = true
+      alert('Coming Soon....')
+      this.itemLoading = false
     },
     ...mapActions(['fetchCompanys', 'fetchCompany'])
   }
@@ -79,7 +102,7 @@ export default {
 
 <style scoped>
 .main-container {
-  padding: 30px 100px;
+  padding: 30px 70px;
   background-color: #f0f8ff;
 }
 .item-contents {
@@ -92,6 +115,52 @@ export default {
 }
 .item {
   display: flex;
+}
+#search {
+  padding: 20px 30px;
+}
+#search-input {
+  width: 200px;
+  height: 25px;
+  padding-left: 5px;
+  border-radius: 2px;
+}
+#searchCompany {
+  width: 60px;
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  border: solid 1px #a9a9a9;
+  background-color: #4682b4;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+#registCompany {
+  width: 120px;
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  border: solid 1px #a9a9a9;
+  background-color: #6495ed;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+.editCompany {
+  width: 50px;
+  margin-bottom: 100px;
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  border: solid 1px #a9a9a9;
+  background-color: #6495ed;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
 }
 #list {
   width: 35vw;
@@ -125,7 +194,10 @@ export default {
 .value {
   font-size: 13px;
 }
-.value img {
+.value div {
+  margin: 0px !important;
+}
+.value div img {
   width: 30px;
   height: 30px;
 }

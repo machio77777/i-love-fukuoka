@@ -18,7 +18,7 @@ export const actions = {
     const companys = [
       { 
         id : 1, 
-        name : '株式会社ヌーラボ', 
+        name : 'ヌーラボ', 
         address : '〒810-0041 福岡県福岡市中央区大名1-8-6 HCC BLD',
         job : '自社サービス(backlog/cacoo/typetalk)',
         skills : [
@@ -50,7 +50,7 @@ export const actions = {
       },
       { 
         id : 2, 
-        name : '株式会社しくみデザイン', 
+        name : 'しくみデザイン', 
         address : '〒812-0011 福岡市博多区博多駅前4-8-15博多鳳城ビル401',
         job : 'WEB制作会社',
         skills : [],
@@ -60,7 +60,7 @@ export const actions = {
       },
       { 
         id : 3, 
-        name : '株式会社GMOペパボ', 
+        name : 'GMOペパボ', 
         address : '〒810-0001 福岡県福岡市中央区天神2丁目7番21号 天神プライム',
         job : '自社サービス(ホスティング/EC支援/ハンドメイド)',
         skills : [],
@@ -70,7 +70,7 @@ export const actions = {
       },
       { 
         id : 4, 
-        name : '株式会社エニセンス', 
+        name : 'エニセンス', 
         address : '〒810-0001 福岡県福岡市中央区天神1-15-2 第6明星ビル8F',
         job : 'WEB制作会社',
         skills : [],
@@ -80,7 +80,7 @@ export const actions = {
       },
       { 
         id : 5, 
-        name : '株式会社キャッチアップ', 
+        name : 'キャッチアップ', 
         address : '〒810-0041 福岡市中央区大名 2-11-25 新栄ビル4F',
         job : 'WEB制作会社(baserCMS)',
         skills : [],
@@ -90,7 +90,7 @@ export const actions = {
       },
       { 
         id : 6, 
-        name : '株式会社さくらインターネット', 
+        name : 'さくらインターネット', 
         address : '〒810-0042 福岡県福岡市中央区赤坂1-12-15 読売福岡ビル 7F',
         job : '自社サービス(ホスティング)',
         skills : [],
@@ -100,7 +100,7 @@ export const actions = {
       },
       { 
         id : 7, 
-        name : '株式会社Yahoo', 
+        name : 'Yahoo JAPAN', 
         address : '〒810-0801 福岡県福岡市博多区中洲5-3-8 アクア博多 6階',
         job : '自社サービス(WEBサービス)',
         skills : [],
@@ -110,7 +110,7 @@ export const actions = {
       },
       { 
         id : 8, 
-        name : '株式会社ペンシル', 
+        name : 'ペンシル', 
         address : '〒810-0001 福岡市中央区天神1丁目3-38 天神121ビル5Ｆ',
         job : 'WEB制作会社',
         skills : [],
