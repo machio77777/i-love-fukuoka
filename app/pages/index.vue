@@ -3,11 +3,11 @@
     <div id="search" class="item-contents">
       <div>
         <ul style="margin-bottom:25px; display:flex;">
-          <li style="width:220px;"><input id="search-input" type="text" value="" placeholder="会社名を入力してください" /></li>
+          <li style="width:220px;"><input type="text" value="" placeholder="会社名を入力してください" /></li>
           <li style="width:80px;"><div id="searchCompany" @click="searchCompany()">検 索</div></li>
           <li><p style="padding: 3px;">※ 会社名を前方一致で検索.</p></li>
         </ul>
-        <div id="registCompany" @click="registCompany()">新 規 登 録 へ</div>
+        <nuxt-link to="/new"><div id="registCompany">新 規 登 録 へ</div></nuxt-link>
       </div>
     </div>
     <div v-show="loading" class="loader"></div>
@@ -60,6 +60,7 @@ export default {
   data() {
     return {
       loading : false,
+      mode : 1,
       company : []
     }
   },
@@ -79,9 +80,6 @@ export default {
       this.itemLoading = true
       alert('Coming Soon....')
       this.itemLoading = false
-    },
-    async registCompany() {
-      alert('Coming Soon....')
     },
     async editCompany(companyId) {
       alert('Coming Soon....')
@@ -103,7 +101,6 @@ export default {
 <style scoped>
 .main-container {
   padding: 30px 70px;
-  background-color: #f0f8ff;
 }
 .item-contents {
   margin: 10px;
@@ -118,12 +115,6 @@ export default {
 }
 #search {
   padding: 20px 30px;
-}
-#search-input {
-  width: 200px;
-  height: 25px;
-  padding-left: 5px;
-  border-radius: 2px;
 }
 #searchCompany {
   width: 60px;

@@ -121,6 +121,9 @@ export const actions = {
     ]
     commit('setCompanys', { companys })
   },
+  async registCompany({ commit }, { company }) {
+    console.log(company)
+  },
   async deleteCompany({ commit }, { companyId }) {
   }
 }
