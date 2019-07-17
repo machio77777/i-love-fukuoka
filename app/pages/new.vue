@@ -28,7 +28,9 @@
         <li class="column"></li>
         <li>
           <div id="usedSkills" v-if="usedSkills.length !== 0">
-            <div v-for="usedSkill in usedSkills" :key=usedSkill>{{ usedSkill }}</div>
+            <div v-for="usedSkill in usedSkills" :key=usedSkill.key>
+              {{ usedSkill.key }}
+            </div>
           </div>
         </li>
       </ul>
@@ -103,6 +105,7 @@ export default {
         welcomedSkill5 : this.welcomedSkill5
       }
       await this.registCompany({ company : request })
+      this.$router.push(`/`)
     },
     addSkill() {
       if (this.usedSkillsSearch === '') {
@@ -112,7 +115,9 @@ export default {
         this.usedSkillsSearch = ''
         return
       }
-      this.usedSkills.push(this.usedSkillsSearch)
+      const skillLower = this.usedSkillsSearch.toLowerCase()
+      const params = { key : this.usedSkillsSearch, path : require(`../assets/img/${skillLower}.svg`) }
+      this.usedSkills.push(params)
       this.usedSkillsSearch = ''
     },
     ...mapActions(['registCompany'])

@@ -13,15 +13,15 @@
     <div v-show="loading" class="loader"></div>
     <div v-show="!loading" class="item">
       <div id="list" class="item-contents">
-        <div v-for="company in companys" :key="company.id">
+        <div v-for="(company, index) in companys" :key="company.id">
           <div class="list-contents">
-            <div class="editCompany" @click="editCompany(company.id)">編 集</div>
-            <div class="button" @click="deleteCompany(company.id)">削 除</div>
-            <div id="company-link" class="company-link" @click="detailCompany(company.id)">{{ company.name }}</div>
+            <div class="editCompany" @click="editCompany(index)">編 集</div>
+            <div class="button" @click="deleteCompany(index)">削 除</div>
+            <div id="company-link" class="company-link" @click="detailCompany(index)">{{ company.name }}</div>
           </div>
         </div>
       </div>
-      <div id="detail" class="item-contents" v-if="company.length!==0">
+      <div id="detail" class="item-contents" v-if="company.length !== 0">
         <div class="column">◾️企業名</div>
         <div class="value">{{ company.name }}</div>
         <div class="column">◾️リンク先</div>
@@ -30,21 +30,28 @@
         <div class="value">{{ company.address }}</div>
         <div class="column">◾️業務内容</div>
         <div class="value">{{ company.job }}</div>
-        <div class="column" v-if="company.skills.length!==0">◾️使われている技術</div>
-        <div v-for="skill in company.skills" :key=skill.key style="display:inline-block;">
+        <div class="column">◾️使われている技術</div>
+        <div v-for="skill in company.usedSkills" :key=skill.key style="display:inline-block;">
           <div class="value skill-img">
             <div style="text-align:center;"><img :src=skill.path /></div>
             <p>{{ skill.key }}</p>
           </div>
         </div>
-        <div class="column" v-if="company.requires.length!==0">◾️求められるスキル</div>
+        <div class="column">◾️求められるスキル</div>
+        <div class="value">{{ company.requiredSkill1 }}</div>
+        <div class="value">{{ company.requiredSkill2 }}</div>
+        <div class="value">{{ company.requiredSkill3 }}</div>
+        <div class="value">{{ company.requiredSkill4 }}</div>
+        <div class="value">{{ company.requiredSkill5 }}</div>
         <div v-for="require in company.requires" :key=require>
           <div class="value">・{{ require }}</div>
         </div>
-        <div class="column" v-if="company.welcomes.length!==0">◾️歓迎されるスキル</div>
-        <div v-for="welcome in company.welcomes" :key=welcome>
-          <div class="value">・{{ welcome }}</div>
-        </div>
+        <div class="column">◾️歓迎されるスキル</div>
+        <div class="value">{{ company.welcomedSkill1 }}</div>
+        <div class="value">{{ company.welcomedSkill2 }}</div>
+        <div class="value">{{ company.welcomedSkill3 }}</div>
+        <div class="value">{{ company.welcomedSkill4 }}</div>
+        <div class="value">{{ company.welcomedSkill5 }}</div>
       </div>
       <div id="detail" class="item-contents" v-else>
         <p>会社名を選択してください!!</p>
@@ -85,8 +92,7 @@ export default {
       alert('Coming Soon....')
     },
     async detailCompany(companyId) {
-      const idx = companyId - 1
-      this.company = this.companys[idx]
+      this.company = this.companys[companyId]
     },
     async deleteCompany(companyId) {
       this.itemLoading = true
@@ -155,6 +161,7 @@ export default {
 }
 #list {
   width: 35vw;
+  min-height: 60vh;
 }
 .list-contents {
   margin: 15px 0;
