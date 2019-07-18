@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   data() {
@@ -83,7 +83,31 @@ export default {
       welcomedSkill5 : ''
     }
   },
+  mounted() {
+    this.init()
+  },
+  computed: {
+    ...mapGetters({'company' : 'company'})
+  },
   methods: {
+    init() {
+      this.name = this.company.name
+      this.link = this.company.link
+      this.address = this.company.address
+      this.job = this.company.job
+      this.usedSkillsSearch = this.company.usedSkillsSearch
+      this.usedSkills = this.company.usedSkills
+      this.requiredSkill1 = this.company.requiredSkill1
+      this.requiredSkill2 = this.company.requiredSkill2
+      this.requiredSkill3 = this.company.requiredSkill3
+      this.requiredSkill4 = this.company.requiredSkill4
+      this.requiredSkill5 = this.company.requiredSkill5
+      this.welcomedSkill1 = this.company.welcomedSkill1
+      this.welcomedSkill2 = this.company.welcomedSkill2
+      this.welcomedSkill3 = this.company.welcomedSkill3
+      this.welcomedSkill4 = this.company.welcomedSkill4
+      this.welcomedSkill5 = this.company.welcomedSkill5
+    },
     addSkill() {
       if (this.usedSkillsSearch === '') {
         return
@@ -103,7 +127,7 @@ export default {
         link : this.link,
         address : this.address,
         job : this.job,
-        usedSkills : (this.usedSkills.length === 0) ? "" : this.usedSkills.length,
+        usedSkills : this.usedSkills,
         requiredSkill1 : this.requiredSkill1,
         requiredSkill2 : this.requiredSkill2,
         requiredSkill3 : this.requiredSkill3,
