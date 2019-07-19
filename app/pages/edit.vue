@@ -53,7 +53,7 @@
         </li>
       </ul>
       <ul style="justify-content: center; margin-bottom:0px;">
-        <li><button type="button" style="width:110px;" @click="regist">新 規 登 録</button></li>
+        <li><button type="button" style="width:110px;" @click="update">更 新</button></li>
       </ul>
     </div>
   </div>
@@ -87,7 +87,7 @@ export default {
     this.init()
   },
   computed: {
-    ...mapGetters({'company' : 'company'})
+    ...mapGetters({'company' : 'company', 'index' : 'index'})
   },
   methods: {
     init() {
@@ -121,7 +121,7 @@ export default {
       this.usedSkills.push(params)
       this.usedSkillsSearch = ''
     },
-    async regist() {
+    async update() {
       const request = {
         name : this.name,
         link : this.link,
@@ -139,10 +139,10 @@ export default {
         welcomedSkill4 : this.welcomedSkill4,
         welcomedSkill5 : this.welcomedSkill5
       }
-      await this.registCompany({ company : request })
+      await this.updateCompany({ index : this.index, company : request })
       this.$router.push(`/`)
     },
-    ...mapActions(['registCompany'])
+    ...mapActions(['updateCompany'])
   }
 }
 </script>

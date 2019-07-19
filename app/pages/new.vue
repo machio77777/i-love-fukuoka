@@ -103,7 +103,7 @@ export default {
         link : this.link,
         address : this.address,
         job : this.job,
-        usedSkills : (this.usedSkills.length === 0) ? "" : this.usedSkills.length,
+        usedSkills : (this.usedSkills.length === 0) ? "" : this.usedSkills,
         requiredSkill1 : this.requiredSkill1,
         requiredSkill2 : this.requiredSkill2,
         requiredSkill3 : this.requiredSkill3,
