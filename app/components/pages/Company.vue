@@ -138,7 +138,13 @@ export default {
         return
       }
       const skillLower = this.usedSkillsSearch.toLowerCase()
-      const params = { key : this.usedSkillsSearch, path : require(`../../assets/img/${skillLower}.svg`) }
+      let path = null
+      try {
+        path = require(`../../assets/img/${skillLower}.svg`)
+      } catch(e) {
+        path = null
+      }
+      const params = { key : this.usedSkillsSearch, path : path }
       this.usedSkills.push(params)
       this.usedSkillsSearch = ''
       this.createObject()
