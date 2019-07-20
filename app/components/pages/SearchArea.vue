@@ -6,7 +6,7 @@
         <li style="width:80px;"><div id="searchCompany" class="button" @click="searchCompany()">検 索</div></li>
         <li><p style="padding: 3px;">※ 会社名を前方一致で検索.</p></li>
       </ul>
-      <nuxt-link to="/new"><div id="registCompany" class="button">新 規 登 録 へ</div></nuxt-link>
+      <div id="registCompany" class="button" @click="regist()">新 規 登 録 へ</div>
     </div>
   </div>
 </template>
@@ -15,14 +15,18 @@
 import { mapActions } from 'vuex'
 
 export default {
+  data () {
+    return {
+      
+    }
+  },
   methods: {
     async searchCompany() {
-      // TODO 検索処理の実装が必要
-      this.itemLoading = true
-      alert('Coming Soon....')
-      this.itemLoading = false
+      alert('Coming Soon...')
     },
-    //...mapActions([''])
+    regist() {
+      this.$router.push(`/new`)
+    }
   }
 }
 </script>

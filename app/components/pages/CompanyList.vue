@@ -22,10 +22,8 @@ export default {
   },
   methods: {
     async init() {
-      this.itemLoading = true
-      await this.fetchCompanys()
+      await this.fetchCompanys({ param : null })
       this.clearCompany()
-      this.itemLoading = false
     },
     async detailData(index) {
       this.fetchCompany({ index : index })
@@ -35,10 +33,8 @@ export default {
       this.$router.push(`/edit`)
     },
     async deleteData(index) {
-      this.itemLoading = true
       await this.deleteCompany({ index : index })
       this.clearCompany()
-      this.itemLoading = false
     },
     ...mapActions(['fetchCompanys', 'fetchCompany', 'deleteCompany', 'clearCompany'])
   }

@@ -1,9 +1,10 @@
+export const strict = false
 
 export const state = () => ({
   companys : [],
-  company : [],
-  targetData : {},
-  index : ''
+  company : null,
+  targetData : null,
+  index : null
 })
 
 export const getters = {
@@ -30,15 +31,16 @@ export const mutations = {
 
 export const actions = {
   async fetchCompanys({ commit }) {
-    const companys = await this.$axios.$get(`/companys.json?`)
+    const companys = await this.$axios.$get(`companys.json`)
     commit('setCompanys', { companys })
   },
   async registCompany({ commit }) {
     const targetData = this.getters['targetData']
     await this.$axios.$post(`/companys.json`, targetData)
   },
-  async updateCompany({ commit }, { index }) {
+  async updateCompany({ commit }) {
     const targetData = this.getters['targetData']
+    const index = this.getters['index']
     await this.$axios.$put(`/companys/${index}.json`, targetData)
   },
   async deleteCompany({ commit }, { index }) {
@@ -56,8 +58,8 @@ export const actions = {
     commit('setTargetData', { targetData })
   },
   clearCompany({ commit }) {
-    const company = []
-    const index = ''
+    const company = null
+    const index = null
     commit('setCompany', { company })
     commit('setIndex', { index })
   }

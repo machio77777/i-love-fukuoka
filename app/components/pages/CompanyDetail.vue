@@ -1,5 +1,8 @@
 <template>
-  <div id="detail" class="item-contents" v-if="company.length !== 0">
+  <div id="detail" class="item-contents" v-if="company === null">
+    <p style="padding: 15px 0 0 15px;">会社名を選択してください!!</p>
+  </div>
+  <div id="detail" class="item-contents" v-else>
     <div>
       <p class="column">◾️企業名</p>
       <p class="value">{{ company.name }}</p>
@@ -42,9 +45,6 @@
       <p class="value">{{ company.welcomedSkill5 }}</p>
     </div>
   </div>
-  <div id="detail" class="item-contents" v-else>
-    <p style="padding: 15px 0 0 15px;">会社名を選択してください!!</p>
-  </div>
 </template>
 
 <script>
@@ -53,7 +53,7 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters({'company' : 'company'})
-  },
+  }
 }
 </script>
 

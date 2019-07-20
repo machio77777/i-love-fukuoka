@@ -1,8 +1,7 @@
 <template>
   <div class="main-container">
     <SearchArea />
-    <div v-show="loading" class="loader"></div>
-    <div v-show="!loading" class="item">
+    <div class="item">
       <CompanyList />
       <CompanyDetail />
     </div>
@@ -20,11 +19,6 @@ export default {
     SearchArea,
     CompanyList,
     CompanyDetail
-  },
-  data() {
-    return {
-      loading : false,
-    }
   }
 }
 </script>

@@ -60,22 +60,22 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   data () {
     return {
-      name : '',
-      link : '',
-      address : '',
-      job : '',
-      usedSkillsSearch : '',
+      name : null,
+      link : null,
+      address : null,
+      job : null,
+      usedSkillsSearch : null,
       usedSkills : [],
-      requiredSkill1 : '',
-      requiredSkill2 : '',
-      requiredSkill3 : '',
-      requiredSkill4 : '',
-      requiredSkill5 : '',
-      welcomedSkill1 : '',
-      welcomedSkill2 : '',
-      welcomedSkill3 : '',
-      welcomedSkill4 : '',
-      welcomedSkill5 : ''
+      requiredSkill1 : null,
+      requiredSkill2 : null,
+      requiredSkill3 : null,
+      requiredSkill4 : null,
+      requiredSkill5 : null,
+      welcomedSkill1 : null,
+      welcomedSkill2 : null,
+      welcomedSkill3 : null,
+      welcomedSkill4 : null,
+      welcomedSkill5 : null
     }
   },
   computed: {
@@ -83,7 +83,7 @@ export default {
   },
   mounted() {
     // 更新時のみstore値を反映
-    if (this.company.length !== 0) {
+    if (this.company !== null) {
       this.init()
       this.createObject()
     }
@@ -97,7 +97,7 @@ export default {
       this.address = this.company.address
       this.job = this.company.job
       this.usedSkillsSearch = this.company.usedSkillsSearch
-      this.usedSkills = this.company.usedSkills
+      this.usedSkills = (this.company.usedSkills === undefined) ? [] : this.company.usedSkills
       this.requiredSkill1 = this.company.requiredSkill1
       this.requiredSkill2 = this.company.requiredSkill2
       this.requiredSkill3 = this.company.requiredSkill3
@@ -140,8 +140,8 @@ export default {
       const skillLower = this.usedSkillsSearch.toLowerCase()
       const params = { key : this.usedSkillsSearch, path : require(`../../assets/img/${skillLower}.svg`) }
       this.usedSkills.push(params)
-      this.createObject()
       this.usedSkillsSearch = ''
+      this.createObject()
     },
     onChange() {
       this.createObject()

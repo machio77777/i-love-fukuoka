@@ -10,12 +10,20 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import Company from '~/components/pages/Company.vue'
 
 export default {
   components: {
     Company
+  },
+  mounted() {
+    if (this.index === null) {
+      this.$router.push(`/`)
+    }
+  },
+  computed: {
+    ...mapGetters({'index' : 'index'})
   },
   methods: {
     async update() {
