@@ -40,6 +40,11 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/proxy'
   ],
+
+  axios: {
+    // 自分のfirebaseアカウントを設定
+    baseURL: 'https://nuxt-blog-service-d0c1f.firebaseio.com'
+  },
   /*
   ** Build configuration
   */
