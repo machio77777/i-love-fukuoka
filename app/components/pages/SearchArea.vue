@@ -25,8 +25,10 @@ export default {
       alert('Coming Soon...')
     },
     regist() {
+      this.clearCompany()
       this.$router.push(`/new`)
-    }
+    },
+    ...mapActions(['clearCompany'])
   }
 }
 </script>

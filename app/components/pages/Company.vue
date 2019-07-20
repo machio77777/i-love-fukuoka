@@ -2,23 +2,23 @@
   <div>
     <ul>
       <li class="column">会社名.</li>
-      <li><input id="name" type="text" v-model=name @change="onChange" placeholder="株式会社○○○○"></li>
+      <li><input id="name" type="text" v-model=name @change="onChange"></li>
     </ul>
     <ul>
       <li class="column">リンク.</li>
-      <li><input id="link" type="text" v-model=link @change="onChange" placeholder="https://xxxx.com"></li>
+      <li><input id="link" type="text" v-model=link @change="onChange"></li>
     </ul>
     <ul>
       <li class="column">住所.</li>
-      <li><input id="address" type="text" v-model=address @change="onChange" placeholder="〒123-4567 東京都○○○区○○○町 1-2-3"></li>
+      <li><input id="address" type="text" v-model=address @change="onChange"></li>
     </ul>
     <ul>
       <li class="column">業務内容.</li>
-      <li><input id="job" type="text" v-model=job @change="onChange" placeholder="WEB制作会社"></li>
+      <li><input id="job" type="text" v-model=job @change="onChange"></li>
     </ul>
     <ul>
       <li class="column">使われている技術.</li>
-      <li><div><input id="usedSkillsSearch" type="text" v-model=usedSkillsSearch placeholder="Java"></div></li>
+      <li><div><input id="usedSkillsSearch" type="text" v-model=usedSkillsSearch></div></li>
       <li style="margin-left:10px;"><button type="button" @click="addSkill()">追 加</button></li>
     </ul>
     <ul>
@@ -34,21 +34,21 @@
     <ul style="margin-bottom:10px;">
       <li class="column">求められるスキル.</li>
       <li>
-        <div><input class="requiredSkill" type="text" v-model=requiredSkill1 @change="onChange" placeholder="Javaによる開発経験"></div>
-        <div><input class="requiredSkill" type="text" v-model=requiredSkill2 @change="onChange" placeholder="Webアプリケーションの開発経験"></div>
-        <div><input class="requiredSkill" type="text" v-model=requiredSkill3 @change="onChange" placeholder="データベースを用いた開発経験"></div>
-        <div><input class="requiredSkill" type="text" v-model=requiredSkill4 @change="onChange" placeholder="Linux/Unixの知識・経験"></div>
-        <div><input class="requiredSkill" type="text" v-model=requiredSkill5 @change="onChange" placeholder="チームメンバーで協力して作業を行うことが好きな方"></div>
+        <div><input class="requiredSkill" type="text" v-model=requiredSkill1 @change="onChange"></div>
+        <div><input class="requiredSkill" type="text" v-model=requiredSkill2 @change="onChange"></div>
+        <div><input class="requiredSkill" type="text" v-model=requiredSkill3 @change="onChange"></div>
+        <div><input class="requiredSkill" type="text" v-model=requiredSkill4 @change="onChange"></div>
+        <div><input class="requiredSkill" type="text" v-model=requiredSkill5 @change="onChange"></div>
       </li>
     </ul>
     <ul style="margin-bottom:10px;">
       <li class="column">歓迎されるスキル.</li>
       <li>
-        <div><input class="welcomedSkill" type="text" v-model=welcomedSkill1 @change="onChange" placeholder="Web認証技術 (OAuth、Open ID Connect、SAML、2段階認証など) の知識・経験"></div>
-        <div><input class="welcomedSkill" type="text" v-model=welcomedSkill2 @change="onChange" placeholder="Web API作成の知識・経験"></div>
-        <div><input class="welcomedSkill" type="text" v-model=welcomedSkill3 @change="onChange" placeholder="セキュリティに関する知識・経験"></div>
-        <div><input class="welcomedSkill" type="text" v-model=welcomedSkill4 @change="onChange" placeholder="オープンソースコミュニティ等での活動経験"></div>
-        <div><input class="welcomedSkill" type="text" v-model=welcomedSkill5 @change="onChange" placeholder="英語によるコミュニケーション（主に読み書き）が可能な方"></div>
+        <div><input class="welcomedSkill" type="text" v-model=welcomedSkill1 @change="onChange"></div>
+        <div><input class="welcomedSkill" type="text" v-model=welcomedSkill2 @change="onChange"></div>
+        <div><input class="welcomedSkill" type="text" v-model=welcomedSkill3 @change="onChange"></div>
+        <div><input class="welcomedSkill" type="text" v-model=welcomedSkill4 @change="onChange"></div>
+        <div><input class="welcomedSkill" type="text" v-model=welcomedSkill5 @change="onChange"></div>
       </li>
     </ul>
   </div>
