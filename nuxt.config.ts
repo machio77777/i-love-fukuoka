@@ -20,6 +20,8 @@ export default {
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
+
+  router: { base: '/i-love-fukuoka/' },
   /*
   ** Global CSS
   */
