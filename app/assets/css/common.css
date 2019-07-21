@@ -44,6 +44,14 @@ ul {
   box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
 }
 
+/*** ページ遷移時のアニメーション ***/
+.page-enter-active, .page-leave-active {
+  transition: opacity 0.3s
+}
+.page-enter, .page-leave-active {
+  opacity: 0
+}
+
 /*** page制御 ***/
 .main-container {
   background-color: #f0f8ff;
