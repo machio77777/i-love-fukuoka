@@ -26,7 +26,8 @@
       <li>
         <div id="usedSkills" v-if="usedSkills.length !== 0">
           <div v-for="usedSkill in usedSkills" :key=usedSkill.key>
-            {{ usedSkill.key }}
+            <span>{{ usedSkill.key }}</span>
+            <span @click="deleteSkill(usedSkill.key)">✖</span>
           </div>
         </div>
       </li>
@@ -149,6 +150,15 @@ export default {
       this.usedSkillsSearch = ''
       this.createObject()
     },
+    deleteSkill(skillKey) {
+      for (let i in this.usedSkills) {
+        if (this.usedSkills[i].key === skillKey) {
+          this.usedSkills.splice(i, 1)
+          this.createObject()
+          break;
+        }
+      }
+    },
     onChange() {
       this.createObject()
     },
@@ -184,10 +194,12 @@ ul {
   margin: 3px;
   padding: 7px 10px;
   font-size: 12px;
-  color: #ffffff;
   background-color: #000000;
   border-radius: 2px;
   box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+#usedSkills span {
+  color: #ffffff;
 }
 .requiredSkill {
   width: 500px;
