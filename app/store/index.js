@@ -64,3 +64,10 @@ export const actions = {
     commit('setIndex', { index })
   }
 }
+
+export default {
+  state,
+  getters,
+  mutations,
+  actions
+}

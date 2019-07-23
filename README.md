@@ -20,6 +20,45 @@ export default {
 }
 ```
 
+## Jest.
+- jestのモジュールをインストール.
+```js
+yarn add -D jest
+yarn add -D @vue/test-utils lodash.clonedeep
+yarn add -D babel-jest 'babel-core@^7.0.0-0'
+yarn add -D @babel/preset-env
+yarn add core-js@3
+```
+- package.jsonに以下追記.
+```js
+"scripts": {
+  "test": "jest"
+},
+"jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "targets": {
+                "ie": 11
+              },
+              "useBuiltIns": "usage",
+              "corejs": 3
+            }
+          ]
+        ]
+      }
+    }
+  }
+```
+
 ## TypeScript.
 - TypeScript開発に必要なモジュールを導入し、nuxt.config.jsの拡張子を.tsに変更.
 ```bash
