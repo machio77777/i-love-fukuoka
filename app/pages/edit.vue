@@ -27,8 +27,16 @@ export default {
   },
   methods: {
     async update() {
-      await this.updateCompany()
-      this.$router.push(`/`)
+      try {
+        await this.updateCompany()
+        this.$router.push(`/`)
+      } catch (e) {
+        this.$notify.error({
+          title: '更新失敗',
+          position: 'bottom-right',
+          duration: 1000
+        })
+      }
     },
     ...mapActions(['updateCompany'])
   }

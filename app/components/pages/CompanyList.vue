@@ -33,7 +33,21 @@ export default {
       this.$router.push(`/edit`)
     },
     async deleteData(index) {
-      await this.deleteCompany({ index : index })
+      try {
+        await this.deleteCompany({ index : index })
+        this.$notify({
+          type: 'success',
+          title: '削除成功',
+          position: 'bottom-right',
+          duration: 1000
+        })
+      } catch (e) {
+        this.$notify.error({
+          title: '削除失敗',
+          position: 'bottom-right',
+          duration: 1000
+        })
+      }
       this.clearCompany()
     },
     ...mapActions(['fetchCompanys', 'fetchCompany', 'deleteCompany', 'clearCompany'])

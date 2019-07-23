@@ -19,8 +19,16 @@ export default {
   },
   methods: {
     async regist() {
-      await this.registCompany()
-      this.$router.push(`/`)
+      try {
+        await this.registCompany()
+        this.$router.push(`/`)
+      } catch (e) {
+        this.$notify.error({
+          title: '登録失敗',
+          position: 'bottom-right',
+          duration: 1000
+        })
+      }
     },
     ...mapActions(['registCompany'])
   }
