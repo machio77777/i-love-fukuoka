@@ -27,7 +27,7 @@ yarn add -D jest
 yarn add -D @vue/test-utils lodash.clonedeep
 yarn add -D babel-jest 'babel-core@^7.0.0-0'
 yarn add -D @babel/preset-env
-yarn add core-js@3
+//yarn add core-js@latest2.6.9
 ```
 - package.jsonに以下追記.
 ```js
@@ -50,7 +50,7 @@ yarn add core-js@3
                 "ie": 11
               },
               "useBuiltIns": "usage",
-              "corejs": 3
+              "corejs": 2.69
             }
           ]
         ]

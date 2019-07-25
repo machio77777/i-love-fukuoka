@@ -45,7 +45,7 @@ export const actions = {
   },
   async deleteCompany({ commit }, { index }) {
     await this.$axios.$delete(`/companys/${index}.json`)
-    const companys = await this.$axios.$get(`/companys.json?`)
+    const companys = await this.$axios.$get(`/companys.json`)
     commit('setCompanys', { companys })
   },
   fetchCompany({ commit }, { index }) {
