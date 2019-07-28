@@ -18,7 +18,7 @@
     </ul>
     <ul>
       <li class="column">使われている技術.</li>
-      <li><div><input id="usedSkillsSearch" type="text" v-model=usedSkillsSearch></div></li>
+      <li><div><input id="usedSkillsSearch" type="text" v-model=usedSkillsSearch ref="usedSkillsSearch"></div></li>
       <li style="margin-left:10px;"><button type="button" @click="addSkill()">追 加</button></li>
     </ul>
     <ul>
@@ -131,11 +131,13 @@ export default {
       this.createTargetData({ company : targetData })
     },
     addSkill() {
-      if (this.usedSkillsSearch === '') {
+      if (this.usedSkillsSearch === null || this.usedSkillsSearch === '') {
+        this.$refs.usedSkillsSearch.focus();
         return
       }
-      if (this.usedSkills.find(item => item === this.usedSkillsSearch)) {
+      if (this.usedSkills.find(item => item.key === this.usedSkillsSearch)) {
         this.usedSkillsSearch = ''
+        this.$refs.usedSkillsSearch.focus();
         return
       }
       const skillLower = this.usedSkillsSearch.toLowerCase()
@@ -149,6 +151,7 @@ export default {
       this.usedSkills.push(params)
       this.usedSkillsSearch = ''
       this.createObject()
+      this.$refs.usedSkillsSearch.focus();
     },
     deleteSkill(skillKey) {
       for (let i in this.usedSkills) {
