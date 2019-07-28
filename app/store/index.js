@@ -59,8 +59,10 @@ export const actions = {
   },
   clearCompany({ commit }) {
     const company = null
+    const targetData = null
     const index = null
     commit('setCompany', { company })
+    commit('setTargetData', { targetData })
     commit('setIndex', { index })
   }
 }
