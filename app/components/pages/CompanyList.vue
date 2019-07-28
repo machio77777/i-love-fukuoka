@@ -3,7 +3,7 @@
     <div v-for="(company, index) in companys" :key="company.id">
       <div class="list-contents">
         <div class="editCompany button" @click="editData(index)">編 集</div>
-        <div class="button" @click="deleteData(index)">削 除</div>
+        <div class="button" @click="deleteData(index, company.name)">削 除</div>
         <div id="company-link" class="company-link" @click="detailData(index)">{{ company.name }}</div>
       </div>
     </div>
@@ -18,11 +18,11 @@ export default {
     this.init()
   },
   computed: {
-    ...mapGetters({'companys' : 'companys'})
+    ...mapGetters({'companys' : 'companys', 'company' : 'company'})
   },
   methods: {
     async init() {
-      await this.fetchCompanys({ param : null })
+      await this.fetchCompanys()
       this.clearCompany()
     },
     async detailData(index) {
@@ -32,7 +32,23 @@ export default {
       this.fetchCompany({ index : index })
       this.$router.push(`/edit`)
     },
-    async deleteData(index) {
+    async deleteData(index, name) {
+      // TODO 暫定対応
+      const masterList = [
+        'Yahoo JAPAN',
+        'ペンシル',
+        'ヌーラボ',
+        'しくみデザイン',
+        'GMOペパボ',
+        'エニセンス',
+        'キャッチアップ',
+        'さくらインターネット',
+        'クラウドエース'
+      ]
+      if (masterList.find(item => item === name)) {
+        alert('マスターデータは削除できません')
+        return
+      }
       try {
         await this.deleteCompany({ index : index })
         this.$notify({
