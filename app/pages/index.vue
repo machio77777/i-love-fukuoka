@@ -30,4 +30,13 @@ export default {
 .item {
   display: flex;
 }
+@media (max-width: 480px){
+  .main-container {
+    padding: 5px 10px;
+    min-height: 85vh;
+  }
+  #list {
+    display: none;
+  }
+}
 </style>

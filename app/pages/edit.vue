@@ -59,4 +59,9 @@ ul {
   display: flex;
   margin-bottom: 20px;
 }
+@media (max-width: 480px){
+  .main-container {
+    padding: 5px 10px;
+  }
+}
 </style>

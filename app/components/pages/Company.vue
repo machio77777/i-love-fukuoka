@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="company">
     <ul>
       <li class="column">会社名.</li>
       <li><input id="name" type="text" v-model=name @change="onChange"></li>
@@ -211,6 +211,19 @@ ul {
 .welcomedSkill {
   width: 500px;
   margin-bottom: 10px;
+}
+@media (max-width: 480px){
+  .column {
+    width: 70px;
+    margin-right: 10px;
+  }
+  input {
+    width: 220px !important;
+  }
+  #usedSkills {
+    width: 270px;
+    padding: 10px;
+  }
 }
 </style>
 

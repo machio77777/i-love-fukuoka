@@ -1,6 +1,6 @@
 <template>
   <div id="detail" class="item-contents" v-if="company === null">
-    <p style="padding: 15px 0 0 15px;">会社名を選択してください!!</p>
+    <p style="padding: 15px 0 15px 15px;">会社名を選択してください!!</p>
   </div>
   <div id="detail" class="item-contents" v-else>
     <div>
@@ -86,5 +86,10 @@ export default {
 .skill-img p {
   font-size: 10px;
   text-align: center;
+}
+@media (max-width: 480px){
+  #detail {
+    width: 100vw;
+  } 
 }
 </style>

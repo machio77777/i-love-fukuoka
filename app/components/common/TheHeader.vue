@@ -1,10 +1,21 @@
 <template>
   <div id="header-container">
     <ul id="header">
+      <li id="h-menu"><TheMenu/></li>
       <li><nuxt-link to="/">I Love Fukuoka.</nuxt-link></li>
     </ul>
   </div>
 </template>
+
+<script>
+import TheMenu from '~/components/common/TheMenu.vue'
+
+export default {
+  components: {
+    TheMenu
+  }
+}
+</script>
 
 <style scoped>
 #header-container {
@@ -31,5 +42,13 @@
   color: #ffffff;
   font-size: 20px;
   font-weight: bold;
+}
+@media (max-width: 480px){
+  #header li {
+    margin: 0;
+  }
+  #header #h-menu {
+    margin: 0 10px;
+  }
 }
 </style>

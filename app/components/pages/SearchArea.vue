@@ -4,7 +4,6 @@
       <ul>
         <li style="width:220px;"><input type="text" value="" placeholder="会社名を入力してください" /></li>
         <li style="width:80px;"><div id="searchCompany" class="button" @click="searchCompany()">検 索</div></li>
-        <li><p style="padding: 3px;">※ 会社名を前方一致で検索.</p></li>
       </ul>
       <div id="registCompany" class="button" @click="regist()">新 規 登 録 へ</div>
     </div>
@@ -17,7 +16,6 @@ import { mapActions } from 'vuex'
 export default {
   data () {
     return {
-      
     }
   },
   methods: {
@@ -48,5 +46,13 @@ export default {
 #registCompany {
   width: 120px;
   background-color: #6495ed;
+}
+@media (max-width: 480px){
+  #search ul {
+    margin-bottom: 0;
+  }
+  #registCompany {
+    display: none;
+  } 
 }
 </style>
