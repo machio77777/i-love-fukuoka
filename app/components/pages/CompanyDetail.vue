@@ -11,7 +11,7 @@
       <p class="column">◾️リンク先</p>
       <p class="value"><a :href=company.link target="_blank">{{ company.link }}</a></p>
     </div>
-    <div>
+    <div id="address-area">
       <p class="column">◾️住所</p>
       <p class="value">{{ company.address }}</p>
     </div>
@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div class="r-skill">
       <p class="column">◾️求められるスキル</p>
       <p class="value">{{ company.requiredSkill1 }}</p>
       <p class="value">{{ company.requiredSkill2 }}</p>
@@ -36,7 +36,7 @@
       <p class="value">{{ company.requiredSkill4 }}</p>
       <p class="value">{{ company.requiredSkill5 }}</p>
     </div>
-    <div>
+    <div class="r-skill">
       <p class="column">◾️歓迎されるスキル</p>
       <p class="value">{{ company.welcomedSkill1 }}</p>
       <p class="value">{{ company.welcomedSkill2 }}</p>
@@ -91,5 +91,21 @@ export default {
   #detail {
     width: 100vw;
   } 
+  #address-area {
+    width: 85vw;
+  }
+  #address-area .value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .r-skill {
+    width: 85vw;
+  }
+  .r-skill .value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 </style>

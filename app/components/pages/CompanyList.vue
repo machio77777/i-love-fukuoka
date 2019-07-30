@@ -4,7 +4,7 @@
       <div class="list-contents">
         <div class="editCompany button" @click="editData(index)">編 集</div>
         <div class="button" @click="deleteData(index, company.name)">削 除</div>
-        <div id="company-link" class="company-link" @click="detailData(index)">{{ company.name }}</div>
+        <div class="company-link" @click="detailData(index)">{{ company.name }}</div>
       </div>
     </div>
   </div>
@@ -93,7 +93,7 @@ export default {
 .company-link {
   color: #6495ed;
 }
-#company-link:hover {
+.company-link:hover {
   color: #ff69b4;
 }
 </style>

@@ -14,10 +14,6 @@
 import { mapActions } from 'vuex'
 
 export default {
-  data () {
-    return {
-    }
-  },
   methods: {
     async searchCompany() {
       alert('Coming Soon...')
