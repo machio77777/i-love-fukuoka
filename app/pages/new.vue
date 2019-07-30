@@ -37,7 +37,7 @@ export default {
 
 <style scoped>
 .main-container {
-  padding: 30px 250px;
+  padding: 80px 250px 30px;
 }
 #contents {
   margin: 10px;

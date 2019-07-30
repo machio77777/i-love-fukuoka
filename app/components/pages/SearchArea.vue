@@ -29,6 +29,7 @@ export default {
 
 <style scoped>
 #search {
+  margin-top: 50px;
   padding: 20px 30px;
 }
 #search ul {
@@ -44,6 +45,9 @@ export default {
   background-color: #6495ed;
 }
 @media (max-width: 480px){
+  #search {
+    margin-top: 80px;
+  }
   #search ul {
     margin-bottom: 0;
   }
