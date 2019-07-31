@@ -4,14 +4,16 @@ export const state = () => ({
   companys : [],
   company : null,
   targetData : null,
-  index : null
+  index : null,
+  loading : true
 })
 
 export const getters = {
   companys : (state) => state.companys,
   company : (state) => state.company,
   targetData : (state) => state.targetData,
-  index : (state) => state.index
+  index : (state) => state.index,
+  loading : (state) => state.loading
 }
 
 export const mutations = {
@@ -26,6 +28,9 @@ export const mutations = {
   },
   setIndex(state, { index }) {
     state.index = index
+  },
+  setLoading(state, { loading }) {
+    state.loading = loading
   }
 }
 
@@ -33,6 +38,8 @@ export const actions = {
   async fetchCompanys({ commit }) {
     const companys = await this.$axios.$get(`companys.json`)
     commit('setCompanys', { companys })
+    const loading = false
+    commit('setLoading', { loading })
   },
   async registCompany({ commit }) {
     const targetData = this.getters['targetData']

@@ -1,7 +1,8 @@
 <template>
   <div class="main-container">
     <SearchArea />
-    <div class="item">
+    <div v-show="loading" class="loader"></div>
+    <div v-show="!loading" class="item">
       <CompanyList />
       <CompanyDetail />
     </div>
@@ -19,6 +20,9 @@ export default {
     SearchArea,
     CompanyList,
     CompanyDetail
+  },
+  computed: {
+    ...mapGetters({'loading' : 'loading'})
   }
 }
 </script>
