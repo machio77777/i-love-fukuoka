@@ -33,7 +33,6 @@ export default {
       this.$router.push(`/edit`)
     },
     async deleteData(index, name) {
-      // TODO 暫定対応
       const masterList = [
         'Yahoo JAPAN',
         'ペンシル',
@@ -43,7 +42,10 @@ export default {
         'エニセンス',
         'キャッチアップ',
         'さくらインターネット',
-        'クラウドエース'
+        'クラウドエース',
+        'ラック',
+        'レベルファイブ',
+        'クラスメソッド'
       ]
       if (masterList.find(item => item === name)) {
         alert('マスターデータは削除できません')

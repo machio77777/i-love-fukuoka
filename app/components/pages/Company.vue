@@ -83,7 +83,6 @@ export default {
     ...mapGetters({ 'company' : 'company' })
   },
   mounted() {
-    // 更新時のみstore値を反映
     if (this.company !== null) {
       this.init()
       this.createObject()
@@ -91,8 +90,6 @@ export default {
   },
   methods: {
     init() {
-      // TODO ブラウザ更新時にセッションストレージへの保存
-      // (参考) https://pizzamanz.net/web/vue/vuex-persistedstate/
       this.name = this.company.name
       this.link = this.company.link
       this.address = this.company.address
