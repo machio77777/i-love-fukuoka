@@ -20,6 +20,7 @@ export default {
 <style scoped>
 #header-container {
   position: fixed;
+  margin: 0 auto;
   max-width: 1300px;
   width: 100vw;
   padding: 15px 0;
