@@ -30,6 +30,7 @@ export default {
 <style scoped>
 .main-container {
   padding: 30px 70px;
+  min-height: 100vh;
 }
 .item {
   display: flex;
@@ -37,7 +38,6 @@ export default {
 @media (max-width: 480px){
   .main-container {
     padding: 5px 10px;
-    min-height: 100vh;
   }
   #list {
     display: none;
