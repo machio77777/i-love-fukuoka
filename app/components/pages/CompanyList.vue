@@ -45,7 +45,8 @@ export default {
         'クラウドエース',
         'ラック',
         'レベルファイブ',
-        'クラスメソッド'
+        'クラスメソッド',
+        'チームラボ'
       ]
       if (masterList.find(item => item === name)) {
         alert('マスターデータは削除できません')

@@ -37,7 +37,7 @@ export default {
 @media (max-width: 480px){
   .main-container {
     padding: 5px 10px;
-    min-height: 85vh;
+    min-height: 100vh;
   }
   #list {
     display: none;

@@ -7,6 +7,7 @@
       <div v-for="(company, index) in companys" :key="company.id" for="nav-input">
         <label for="nav-input"><div class="company-link" @click="detailData(index)">{{ company.name }}</div></label>
       </div>
+      <div style="margin-bottom: 50px;"></div>
     </div>
   </div>
 </template>

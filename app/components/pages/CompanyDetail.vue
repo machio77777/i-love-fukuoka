@@ -19,7 +19,7 @@
       <p class="column">◾️業務内容</p>
       <p class="value">{{ company.job }}</p>
     </div>
-    <div>
+    <div id="usedSkills">
       <p class="column">◾️使われている技術</p>
       <div class="skill" v-for="skill in company.usedSkills" :key=skill.key>
         <div class="value skill-img">
@@ -78,7 +78,7 @@ export default {
 }
 .skill {
   display: inline-block;
-  margin: 10px 5px 10px 15px;
+  margin: 10px 15px 10px 15px;
 }
 .skill-img {
   margin: 0px !important;

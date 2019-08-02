@@ -14,4 +14,9 @@
 #footer-container p {
   color: #ffffff;
 }
+@media (max-width: 480px){
+  #footer-container {
+    display: none;
+  }
+}
 </style>
