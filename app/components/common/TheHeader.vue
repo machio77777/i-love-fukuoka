@@ -20,9 +20,7 @@ export default {
 <style scoped>
 #header-container {
   position: fixed;
-  margin: 0 auto;
-  max-width: 1300px;
-  width: 100vw;
+  width: 1300px;
   padding: 15px 0;
   background: linear-gradient(-45deg, rgba(246, 255, 0, .8), rgba(255, 0, 161, .8));
   animation: huerotator 5s infinite alternate;
