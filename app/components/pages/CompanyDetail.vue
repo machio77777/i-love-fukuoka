@@ -59,7 +59,7 @@ export default {
 
 <style scoped>
 #detail {
-  width: 50vw;
+  width: 65vw;
 }
 .column {
   margin: 10px;
