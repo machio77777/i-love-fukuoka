@@ -16,3 +16,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.container {
+  margin: 0 auto;
+  max-width: 1300px;
+}
+</style>

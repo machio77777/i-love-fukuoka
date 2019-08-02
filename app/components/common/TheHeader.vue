@@ -20,6 +20,7 @@ export default {
 <style scoped>
 #header-container {
   position: fixed;
+  max-width: 1300px;
   width: 100vw;
   padding: 15px 0;
   background: linear-gradient(-45deg, rgba(246, 255, 0, .8), rgba(255, 0, 161, .8));
