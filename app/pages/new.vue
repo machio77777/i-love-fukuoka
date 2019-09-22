@@ -38,6 +38,7 @@ export default {
 <style scoped>
 .main-container {
   padding: 80px 250px 30px;
+  min-height: 100vh;
 }
 #contents {
   margin: 10px;

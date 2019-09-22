@@ -2,7 +2,7 @@
   <div id="header-container">
     <ul id="header">
       <li id="h-menu"><TheMenu/></li>
-      <li><nuxt-link to="/">I Love Fukuoka.</nuxt-link></li>
+      <li><nuxt-link to="/">I Love Fukuoka</nuxt-link></li>
     </ul>
   </div>
 </template>
