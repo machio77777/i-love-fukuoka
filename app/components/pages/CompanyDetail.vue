@@ -12,8 +12,8 @@
       <p class="value"><a :href=company.link target="_blank">{{ company.link }}</a></p>
     </div>
     <div>
-      <p class="column">◾️給与</p>
-      <p class="value">{{ company.salary }}</p>
+      <p class="column">◾️住所</p>
+      <p class="value">{{ company.address }}</p>
     </div>
     <div>
       <p class="column">◾️給与</p>

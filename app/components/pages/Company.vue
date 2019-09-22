@@ -227,6 +227,15 @@ ul {
 #address {
   width: 450px;
 }
+#salary {
+  width: 450px;
+}
+#bonus {
+  width: 450px;
+}
+#worktime {
+  width: 450px;
+}
 .welfare {
   width: 500px;
   margin-bottom: 10px;
