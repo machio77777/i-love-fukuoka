@@ -11,6 +11,30 @@
       <p class="column">◾️リンク先</p>
       <p class="value"><a :href=company.link target="_blank">{{ company.link }}</a></p>
     </div>
+    <div>
+      <p class="column">◾️給与</p>
+      <p class="value">{{ company.salary }}</p>
+    </div>
+    <div>
+      <p class="column">◾️給与</p>
+      <p class="value">{{ company.salary }}</p>
+    </div>
+    <div>
+      <p class="column">◾️賞与</p>
+      <p class="value">{{ company.bonus }}</p>
+    </div>
+    <div>
+      <p class="column">◾️就業時間</p>
+      <p class="value">{{ company.worktime }}</p>
+    </div>
+    <div class="r-skill">
+      <p class="column">◾️福利厚生</p>
+      <p class="value">{{ company.welfare1 }}</p>
+      <p class="value">{{ company.welfare2 }}</p>
+      <p class="value">{{ company.welfare3 }}</p>
+      <p class="value">{{ company.welfare4 }}</p>
+      <p class="value">{{ company.welfare5 }}</p>
+    </div>
     <div id="address-area">
       <p class="column">◾️住所</p>
       <p class="value">{{ company.address }}</p>
