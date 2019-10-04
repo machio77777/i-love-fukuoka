@@ -35,10 +35,6 @@
       <p class="value">{{ company.welfare4 }}</p>
       <p class="value">{{ company.welfare5 }}</p>
     </div>
-    <div id="address-area">
-      <p class="column">◾️住所</p>
-      <p class="value">{{ company.address }}</p>
-    </div>
     <div>
       <p class="column">◾️業務内容</p>
       <p class="value">{{ company.job }}</p>
