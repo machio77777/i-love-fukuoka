@@ -2,7 +2,7 @@
   <div id="list" class="item-contents">
     <div v-for="(company, index) in companys" :key="company.id">
       <div class="list-contents">
-        <div class="editCompany button" @click="editData(index)">編 集</div>
+        <div class="editCompany button" @click="editData(index, company.name)">編 集</div>
         <div class="button" @click="deleteData(index, company.name)">削 除</div>
         <div class="company-link" @click="detailData(index)">{{ company.name }}</div>
       </div>
@@ -28,7 +28,29 @@ export default {
     async detailData(index) {
       this.fetchCompany({ index : index })
     },
-    async editData(index) {
+    async editData(index, name) {
+      const masterList = [
+        'Yahoo JAPAN',
+        'ペンシル',
+        'ヌーラボ',
+        'しくみデザイン',
+        'GMOペパボ',
+        'エニセンス',
+        'キャッチアップ',
+        'さくらインターネット',
+        'クラウドエース',
+        'ラック',
+        'レベルファイブ',
+        'クラスメソッド',
+        'チームラボ',
+        'ヤマップ',
+        'オンサイト',
+        'アジアクエスト'
+      ]
+      if (masterList.find(item => item === name)) {
+        alert('マスターデータは変更できません')
+        return
+      }
       this.fetchCompany({ index : index })
       this.$router.push(`/edit`)
     },
